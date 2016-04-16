@@ -8,12 +8,12 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
-    # if @user.save && user_params[:password] == "password1"
-    #   flash[:notice] = "Welcome to Your Admin Account"
-    #   @user.update(role: 1)
-    #   redirect_to
     if @user.save
       flash[:notice] = "Your Account Has Been Successfully Created"
       redirect_to admin_users_path
@@ -29,6 +29,7 @@ class Admin::UsersController < Admin::BaseController
     params.require(:user).permit(:name,
                                  :username,
                                  :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :role)
   end
 end

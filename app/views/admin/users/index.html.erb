@@ -1,5 +1,6 @@
 <h1>Users Panel</h1>
 
+<%= link_to "rewards", admin_rewards_path %>
 <% @users.each do |user| %>
   <div>
     <%= link_to user.name, admin_user_path(user) %>

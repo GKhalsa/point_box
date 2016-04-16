@@ -1,0 +1,16 @@
+<h1>Current Rewards</h1>
+
+<table>
+  <% @rewards.each do |reward|%>
+    <tr>
+      <th>Name</th>
+      <th>Point Cost</th>
+    </tr>
+    <tr>
+      <td><%= reward.name %></td>
+      <td><%= reward.point_cost %></td>
+      <td><%= link_to "Delete", admin_reward_path(reward), method: :delete %></td>
+      <td><%= link_to "Edit", edit_admin_reward_path(reward)%></td>
+    </tr>
+  <% end %>
+</table>
