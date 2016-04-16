@@ -31,8 +31,15 @@ RSpec.feature "pre existing user can login" do
     end
   end
 
-  # content "non existing user cannot login" do
-  #   scenario "they see login page with errors" do
-  #   end
-  # end
+  context "non existing user cannot login" do
+    scenario "they see login page with errors" do
+
+      visit login_path
+      fill_in "Username", with: "username"
+      fill_in "Password", with: "password"
+
+      click_on "login"
+      expect(page).to have_content "Invalid, try again"
+    end
+  end
 end
