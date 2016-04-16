@@ -1,0 +1,38 @@
+ADMIN
+
+points can be created ("assigned to a user") and destroyed only by the admin
+
+rewards can be created, edited, updated, and destroyed only by the admin
+
+admin can create a user
+
+
+USER
+
+users can see their total number of points on their dashboard
+
+the list of possible rewards can be seen by regular users
+
+users can redeem their points for a reward
+
+when users redeem their points, the points are NOT destroyed; instead, they are marked as "redeemed"
+
+when a user redeems points for a reward, the user can see that reward on their dashboard
+
+users need to log in to see their points and rewards
+
+users can only see their own points and rewards -- they should not be able to visit another user's page
+
+users cannot add points to their account, nor can they create new rewards to add to the list
+
+a user cannot redeem another user's points
+
+
+
+
+
+Optional Extensions
+
+Implement Twitter, Github, or Facebook OAuth login
+Use HAML for your views
+TDD using Rspec instead of Test::Unit
