@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   post '/admin/users/:id/points/', to: "admin/points#create", as: :admin_points
   get '/users/:id/rewards/new', to: "rewards#new", as: :new_user_reward
   get '/users/:id/rewards', to: "rewards#index", as: :user_rewards
+  # post '/users/:id/rewards', to: "rewards#create", as: :user_rewards
+  post '/users/:user_id/rewards/:id', to: "rewards#create", as: :user_reward
+  # resources :users do
+    # resources :rewards, only:[:index, :create]
+  # end
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"

@@ -9,7 +9,7 @@
     <tr>
       <td><%= reward.name %></td>
       <td><%= reward.point_cost %></td>
-      <td><%= link_to "BUY", new_user_reward_path(@user) %></td>
+      <td><%= link_to "BUY", user_reward_path(@user, reward), method: :post %></td>
     </tr>
   <% end %>
 </table>
