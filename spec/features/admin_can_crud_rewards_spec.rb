@@ -30,6 +30,13 @@ RSpec.feature "Admin can create rewards" do
 
   context "admin can delete rewards" do
     scenario "they see updated list minus the reward" do
+      admin = create_admin
+      create_reward
+      ApplicationController.any_instance.stubs(:current_user).returns(admin)
+      visit admin_rewards_path
+      expect(page).to have_content "pokemon"
+      click_on "Delete"
+      expect(page).to have_content "The pokemon reward has just been deleted"
     end
   end
 end

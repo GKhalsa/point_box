@@ -26,12 +26,19 @@ class Admin::RewardsController < Admin::BaseController
   def update
     @reward = Reward.find(params[:id])
     if @reward.update(reward_params)
-      flash[:notice] = "You have just updated a reward"
+      flash[:notice] = "You have just updated #{@reward.name}"
       redirect_to admin_rewards_path
     else
       flash.now[:error] = "Please try again"
       render :edit
     end
+  end
+
+  def destroy
+    @reward = Reward.find(params[:id])
+    @reward.destroy
+    flash[:notice] = "The #{@reward.name} reward has just been deleted"
+    redirect_to admin_rewards_path
   end
 
 
