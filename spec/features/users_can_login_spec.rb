@@ -4,11 +4,11 @@ RSpec.feature "pre existing user can login" do
   scenario "they see a welcome page" do
 
     User.create(name: "name",
-            username: "username",
+            username: "usernameee",
             password: "password")
 
      visit login_path
-     fill_in "Username", with: "username"
+     fill_in "Username", with: "usernameeee"
      fill_in "Password", with: "password"
 
      click_on "login"

@@ -3,10 +3,6 @@ class Point < ActiveRecord::Base
   belongs_to :reward
 
   def redeemed?
-    if reward_id.nil?
-      "no"
-    else
-      "yes"
-    end
+    reward_id.nil? ? "no" : "yes"
   end
 end

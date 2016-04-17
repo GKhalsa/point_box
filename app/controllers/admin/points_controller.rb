@@ -7,7 +7,7 @@ class Admin::PointsController < Admin::BaseController
 
   def create
     @user = User.find(params[:id])
-    if @user.points.create(point_params)
+    if @user.points.create
       flash[:notice] = "Added point for #{@user.name}"
       redirect_to admin_user_path(@user)
     else
@@ -18,8 +18,9 @@ class Admin::PointsController < Admin::BaseController
 
   private
 
-  def point_params
-    params.require(:point).permit(:point)
-  end
+  # def point_params
+  #   binding.pry
+  #   params.require(:point).permit(:point)
+  # end
 
 end

@@ -1,5 +1,6 @@
 <h1>User - <%= @user.name %></h1>
 <%= link_to "add point", new_admin_point_path(@user) %><br/>
+<%= link_to "back to all users", admin_users_path %>
 
 <table>
   <% @user.points.each do |point| %>

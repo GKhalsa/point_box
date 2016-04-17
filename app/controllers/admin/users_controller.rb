@@ -23,6 +23,22 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = "You have Successfully updated #{@user.name}"
+      redirect_to admin_user_path(@user)
+    else
+      flash.now[:error] = "Please try again"
+      render :edit
+    end
+  end
+
   private
 
   def user_params

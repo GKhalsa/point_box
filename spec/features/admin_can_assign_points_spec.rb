@@ -13,10 +13,11 @@ RSpec.feature "Admin can assign points" do
 
     # expect(page).to have_content 0
     click_on "add point"
-    
+    click_on "create point"
+
 
     # save_and_open_page
-    # expect(current_path).to eq admin_user_path(user)
-    # expect(page).to have_content 1
+    expect(current_path).to eq admin_user_path(user)
+    expect(page).to have_content 1
   end
 end

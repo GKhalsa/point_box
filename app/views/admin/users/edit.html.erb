@@ -1,0 +1,9 @@
+<h1>Edit User</h1>
+
+<%= form_for(@user, url: admin_user_path(@user)) do |f| %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.text_field :username, placeholder: "username" %>
+  <%= f.text_field :password, placeholder: "password" %>
+  <%= f.text_field :password_confirmation, placeholder: "password_confirmation" %>
+  <%= f.submit %>
+<% end %>

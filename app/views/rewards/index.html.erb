@@ -1,0 +1,15 @@
+<h1>Rewards</h1>
+<h2>Your points: <%= @user.total_points%><h2><br/>
+<table>
+  <% @rewards.each do |reward|%>
+    <tr>
+      <th>Name</th>
+      <th>Point Cost</th>
+    </tr>
+    <tr>
+      <td><%= reward.name %></td>
+      <td><%= reward.point_cost %></td>
+      <td><%= link_to "BUY", new_user_reward_path(@user) %></td>
+    </tr>
+  <% end %>
+</table>
