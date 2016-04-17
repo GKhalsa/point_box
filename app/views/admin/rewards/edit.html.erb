@@ -1,0 +1,7 @@
+<h1>Edit</h1>
+
+<%= form_for(@reward, url: admin_reward_path(@reward)) do |f|%>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.text_field :point_cost, placeholder: "point_cost" %>
+  <%= f.submit %>
+<% end %>

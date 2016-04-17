@@ -33,4 +33,9 @@ module TestHelpers
             username: "Jenny",
             password: "password")
   end
+
+  def create_reward
+    Reward.create(name: "pokemon",
+            point_cost: 3)
+  end
 end

@@ -19,6 +19,21 @@ class Admin::RewardsController < Admin::BaseController
     end
   end
 
+  def edit
+    @reward = Reward.find(params[:id])
+  end
+
+  def update
+    @reward = Reward.find(params[:id])
+    if @reward.update(reward_params)
+      flash[:notice] = "You have just updated a reward"
+      redirect_to admin_rewards_path
+    else
+      flash.now[:error] = "Please try again"
+      render :edit
+    end
+  end
+
 
   private
 
