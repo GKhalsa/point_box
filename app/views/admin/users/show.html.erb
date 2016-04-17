@@ -1,15 +1,18 @@
 <h1>User - <%= @user.name %></h1>
+<%= link_to "add point", new_admin_point_path(@user) %><br/>
 
 <table>
-  <%= @user.point.each do |point| %>
+  <% @user.points.each do |point| %>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Points</th>
+    <th>Point</th>
+    <th>Redeemed?</th>
+
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
+    <td><%= point.point %></td>
+    <td><%=point.redeemed?%></td>
   </tr>
+  <% end %>
 </table>
+
+<h3>Total Points:<%= @user.total_points%></h3>

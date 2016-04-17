@@ -1,0 +1,6 @@
+<h1>Add a Point for <%= @user.name %></h1>
+
+<%= form_for(@point, url: admin_points_path(@user)) do |f| %>
+  <%= f.text_field :point, placeholder: "point value" %>
+  <%= f.submit "add point" %>
+<% end %>
