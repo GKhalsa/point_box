@@ -6,9 +6,14 @@ class RewardsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @user.rewards.create(reward_params)
+    @reward = Reward.find(params[:id])
+    if @user.enough_points(@reward)
+      flash[:notice] = "added a reward"
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "you haven't got the coin lad"
+      redirect_to user_rewards_path(@user)
+    end
   end
 
-  private
-  
 end

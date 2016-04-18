@@ -5,7 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 </head>
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Point Box</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "logout", logout_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav>
+        <!-- Page Content goes here -->
 <body>
 
   <% flash.each do |type, message| %>
@@ -15,4 +26,5 @@
 <%= yield %>
 
 </body>
+</div>
 </html>

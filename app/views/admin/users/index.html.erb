@@ -1,10 +1,16 @@
-<h1>Users Panel</h1>
+<h1>Admin Panel</h1>
 
-<%= link_to "rewards", admin_rewards_path %>
+<a class="waves-effect waves-light btn" href= "/admin/rewards">Rewards</a>
+<a class="waves-effect waves-light btn" href= "/admin/users/new">Add User</a>
 <% @users.each do |user| %>
   <div>
-    <%= link_to user.name, admin_user_path(user) %>
-    <%= link_to "Edit", edit_admin_user_path(user) %>
-    <%= link_to "Delete", admin_user_path(user), method: :delete %>
+
+    <div class="divider"></div>
+    <div class="section">
+      <h5><%= link_to user.name, admin_user_path(user) %></h5>
+      <p><%= link_to "Edit", edit_admin_user_path(user) %></p>
+      <p><%= link_to "Delete", admin_user_path(user), method: :delete %></p>
+    </div>
+
   </div>
 <% end %>

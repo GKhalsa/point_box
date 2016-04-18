@@ -2,7 +2,7 @@
 <%= link_to "add point", new_admin_point_path(@user) %><br/>
 <%= link_to "back to all users", admin_users_path %>
 
-<table>
+<table class="highlight">
   <% @user.points.each do |point| %>
   <tr>
     <th>Point</th>
@@ -12,8 +12,10 @@
   <tr>
     <td><%= point.point %></td>
     <td><%=point.redeemed?%></td>
+    <td><%= point.reward.name if point.reward %>
   </tr>
   <% end %>
 </table>
 
-<h3>Total Points:<%= @user.total_points%></h3>
+<h3>Points Available:<%= @user.total_points%></h3>
+<h3>Used Points:<%= @user.used_points%></h3>

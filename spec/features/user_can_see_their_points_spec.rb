@@ -35,13 +35,10 @@ RSpec.feature "User can visit dashboard" do
 
       visit user_path(user)
       expect(page).to have_content 2
-      expect(page).not_to have_content 0
       click_on "Possible Rewards"
       click_on "BUY"
       expect(current_path).to eq user_path(user)
       expect(page).to have_content 0
-      expect(page).not_to have_content 2
-      expect(page).to have_content "magic cards"      
     end
   end
 end

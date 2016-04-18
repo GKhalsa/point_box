@@ -1,9 +1,11 @@
 <h1>Create An Account</h1>
 
-<%= form_for(@user, url: admin_users_path) do |f| %> 
+<%= form_for(@user, url: admin_users_path) do |f| %>
   <%= f.text_field :name, placeholder: "name" %>
   <%= f.text_field :username, placeholder: "username" %>
-  <%= f.text_field :password, placeholder: "password" %>
-  <%= f.text_field :password_confirmation, placeholder: "password_confirmation" %>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.password_field :password_confirmation, placeholder: "password_confirmation" %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Back", admin_users_path %>

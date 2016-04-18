@@ -4,7 +4,7 @@ RSpec.feature "pre existing user can login" do
   scenario "they see a welcome page" do
 
     User.create(name: "name",
-            username: "usernameee",
+            username: "usernameeee",
             password: "password")
 
      visit login_path
@@ -12,7 +12,7 @@ RSpec.feature "pre existing user can login" do
      fill_in "Password", with: "password"
 
      click_on "login"
-     expect(page).to have_content "Welcome name!"
+     expect(page).to have_content "Welcome Jenny!"
   end
 
   context "pre existing user cannot login with wrong credentials" do

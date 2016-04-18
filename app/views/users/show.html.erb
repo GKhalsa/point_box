@@ -1,5 +1,23 @@
 <h1>Welcome <%= @user.name %>!</h1>
-<h1><%= link_to "Possible Rewards", user_rewards_path(@user) %>
+<h3><%= link_to "Possible Rewards", user_rewards_path(@user) %></h3>
 
-<h1>Your Available Points: <%= @user.total_points %></h1>
-<h2>Your Used Points:</h2>
+
+<div class="row">
+      <h4><div class="col s6">Your Available Points: <%= @user.total_points %></div></h4>
+      <h4><div class="col s6">Your Used Points: <%= @user.used_points %></div></h4>
+    </div>
+<br/>
+<br/>
+<h4>Your Purchased Rewards:</h4>
+<table class="highlight">
+  <% @user.rewards.uniq.each do |reward| %>
+    <tr>
+      <th>Name</th>
+      <th>Point Cost</th>
+    </tr>
+    <tr>
+      <td><%= reward.name %></td>
+      <td><%= reward.point_cost %></td>
+    </tr>
+  <% end %>
+</table>

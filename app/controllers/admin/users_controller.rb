@@ -39,6 +39,14 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    flash[:notice] = "You have terminated #{@user.name}"
+    @user.points.destroy_all
+    @user.destroy
+    redirect_to admin_users_path
+  end
+
   private
 
   def user_params
