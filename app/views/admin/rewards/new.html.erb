@@ -1,6 +1,6 @@
 <h1>Create a New Reward</h1>
 
-<%= form_for(@reward, url: admin_rewards_path) do |f| %>
+<%= form_for([:admin,@reward]) do |f| %> 
   <%= f.text_field :name, placeholder: "name" %>
   <%= f.text_field :point_cost, placeholder: "point_cost" %>
   <%= f.submit %>

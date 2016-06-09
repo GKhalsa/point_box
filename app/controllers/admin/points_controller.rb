@@ -18,9 +18,5 @@ class Admin::PointsController < Admin::BaseController
 
   private
 
-  # def point_params
-  #   binding.pry
-  #   params.require(:point).permit(:point)
-  # end
 
 end
